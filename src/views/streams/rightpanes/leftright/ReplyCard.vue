@@ -8,11 +8,11 @@
         <div class="col-md-8">
           <h6>
             <span class="me-2">{{ title }}</span>
-            <small class="text-secondary"><b>{{ at }}</b></small>
+            <small class="at"><b>{{ at }}</b></small>
           </h6>
         </div>
         <section class="col-md-4">
-          <p>Reply</p>
+          <p class="fw-bold">Reply</p>
         </section>
       </div>
       <p>{{ paragraph }}</p>
@@ -26,4 +26,8 @@ props:["title","at","paragraph"]
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.at{
+  color: rgba(0,0,0,.4);
+}
+</style>

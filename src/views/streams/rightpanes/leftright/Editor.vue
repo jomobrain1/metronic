@@ -1,5 +1,12 @@
 <template>
   <section class="shadow p-3 mb-5 bg-body-tertiary rounded">
+    <p class="text-end px-5 pt-3">
+      <div class="d-flex align-items-center justify-content-end">
+        <KTIcon icon-name="plus" icon-class="fs-2" class="text-primary" />
+      <b class="text-primary">Note</b>
+      </div>
+     
+    </p>
     <div v-if="editor" class="tiptap-header">
       <button
         class="tip-btn"
@@ -37,10 +44,12 @@
         :disabled="!editor.can().chain().focus().toggleCode().run()"
         :class="{ 'is-active': editor.isActive('code') }"
       >
-        code
+        <EditorIcon
+          link="https://img.icons8.com/windows/32/null/marker-pen.png"
+        ></EditorIcon>
       </button>
 
-      <button
+      <!-- <button
         class="tip-btn"
         @click="editor.chain().focus().setParagraph().run()"
         :class="{ 'is-active': editor.isActive('paragraph') }"
@@ -48,15 +57,17 @@
         <EditorIcon
           link="https://img.icons8.com/ios-filled/50/null/paragraph.png"
         ></EditorIcon>
-      </button>
+      </button> -->
       <button
         class="tip-btn"
         @click="editor.chain().focus().toggleHeading({ level: 1 }).run()"
         :class="{ 'is-active': editor.isActive('heading', { level: 1 }) }"
       >
-        h1
+        <EditorIcon
+          link="https://img.icons8.com/material-two-tone/24/null/header-2.png"
+        ></EditorIcon>
       </button>
-      <button
+      <!-- <button
         class="tip-btn"
         @click="editor.chain().focus().toggleHeading({ level: 2 }).run()"
         :class="{ 'is-active': editor.isActive('heading', { level: 2 }) }"
@@ -83,15 +94,15 @@
         :class="{ 'is-active': editor.isActive('heading', { level: 5 }) }"
       >
         h5
-      </button>
-      
-      <button
+      </button> -->
+
+      <!-- <button
         class="tip-btn"
         @click="editor.chain().focus().toggleHeading({ level: 6 }).run()"
         :class="{ 'is-active': editor.isActive('heading', { level: 6 }) }"
       >
         h6
-      </button>
+      </button> -->
       <button
         class="tip-btn"
         @click="editor.chain().focus().toggleBulletList().run()"
@@ -128,14 +139,7 @@
           link="https://img.icons8.com/ios-filled/50/null/horizontal-line.png"
         ></EditorIcon>
       </button>
-      <button
-        class="tip-btn"
-        @click="editor.chain().focus().setHardBreak().run()"
-      >
-        <EditorIcon
-          link="https://img.icons8.com/ios-filled/50/null/space-after-paragraph.png"
-        ></EditorIcon>
-      </button>
+
       <button
         class="tip-btn"
         @click="editor.chain().focus().undo().run()"

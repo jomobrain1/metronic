@@ -1,5 +1,6 @@
 <template>
   <div class="my-3 row p-5">
+    <Editor></Editor>
     <NoteCard>
       <Note1></Note1>
     </NoteCard>
@@ -10,8 +11,6 @@
       and more recently with desktop publishing software like Aldus PageMaker
       including versions of Lorem Ipsum.?
     </NoteCard>
-
-    <Editor></Editor>
   </div>
 </template>
 
