@@ -3,14 +3,21 @@
   <div class="card">
     <!--begin::Card header-->
     <div class="card-header">
-      <h2 class="card-title fw-bold">Calendar</h2>
+      <section class="w-100 d-flex justify-content-between align-items-center">
+        <h5 class="fw-bold">Meetings</h5>
 
-      <div class="card-toolbar">
-        <button class="btn text-primary" @click="newEvent()">
-          <KTIcon icon-name="plus" icon-class="fs-2" class="text-primary" />
-              Add Event
-        </button>
-      </div>
+        <div class="card-toolbar">
+          <p class="mx-2 px-2 py-1 rounded mkt-btn text-primary">see full</p>
+          <p
+            role="button"
+            class="mx-2 px-2 py-1 rounded bg-secondary text-info"
+            @click="newEvent()"
+          >
+            <!-- <KTIcon icon-name="plus" icon-class="fs-2" class="text-primary" /> -->
+            + Schedule
+          </p>
+        </div>
+      </section>
     </div>
     <!--end::Card header-->
 
@@ -31,18 +38,18 @@
 </template>
 
 <script lang="ts">
-import {getAssetPath} from "@/core/helpers/assets";
+import { getAssetPath } from "@/core/helpers/assets";
 import "@fullcalendar/core/vdom";
-import {defineComponent} from "vue";
+import { defineComponent } from "vue";
 import FullCalendar from "@fullcalendar/vue3";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import listPlugin from "@fullcalendar/list";
 import interactionPlugin from "@fullcalendar/interaction";
-import type {CalendarOptions} from "@fullcalendar/core";
-import events, {TODAY} from "@/core/data/events";
+import type { CalendarOptions } from "@fullcalendar/core";
+import events, { TODAY } from "@/core/data/events";
 import NewEventModal from "@/components/modals/forms/NewEventModal.vue";
-import {Modal} from "bootstrap";
+import { Modal } from "bootstrap";
 
 export default defineComponent({
   name: "calendar-app-1",

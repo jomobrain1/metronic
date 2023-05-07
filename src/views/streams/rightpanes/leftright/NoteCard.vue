@@ -1,13 +1,15 @@
 <template>
   <div class="col-md-12">
-    <div class="shadow p-3 mb-5 bg-body-tertiary rounded">
+    <div class="shadow p-5 mb-5 bg-body-tertiary rounded">
       <section class="d-flex justify-content-between">
-        <h5 class="">This is Heading</h5>
-        <p class="">
-          <KTIcon icon-name="pencil" icon-class="fs-2" class="text-dark" />
-        </p>
+        <h3 class="">This is Heading</h3>
+        <KTIcon icon-name="pencil" icon-class="fs-2" class="text-dark" />
       </section>
-      <slot> </slot>
+      <div class="liner mb-5"></div>
+
+      <section class="px-5">
+        <slot> </slot>
+      </section>
     </div>
   </div>
 </template>
@@ -16,4 +18,12 @@
 export default {};
 </script>
 
-<style scoped></style>
+<style>
+.liner {
+  width: 100%;
+  height: 2px;
+  margin-bottom: 30px;
+
+  /* background: #a0a0a0; */
+}
+</style>

@@ -84,6 +84,7 @@
       >
         h5
       </button>
+      
       <button
         class="tip-btn"
         @click="editor.chain().focus().toggleHeading({ level: 6 }).run()"
